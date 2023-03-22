@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+    <h1>Tuotteet</h1>
+   <body>
+      <table border = 1>
+         {% for p in result %}
+            <tr>
+               <th> {{ p['id'] }} </th>
+               <td> {{ p['pressure'] }} </td>
+               <td> {{ p['temperature'] }} </td>
+               <td> {{ p['humidity'] }} </td>
+            </tr>            
+         {% endfor %}
+      </table>
+      
+   </body>
+</html>
