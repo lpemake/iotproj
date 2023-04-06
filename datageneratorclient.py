@@ -30,10 +30,10 @@ while alfa < 10:
     # muunna json-muotoon 
     s = json.dumps(measurement)
     # TODO: lähetä data HTTP Postilla serverille
-    #response = requests.post("http://localhost:5000/uusimittaus", data = s)
+    response = requests.post("http://localhost:5000/uusimittaus", data = s)
 
     print(s)
-    #time.sleep(0.1)
+    time.sleep(0.5)
 
     alfa += 0.1
 # plotataan

@@ -5,10 +5,14 @@ app = Flask(__name__)
 # TODO: tee lista mittauksia varten
 measurements = []
 
+@app.route('/line')
+def get_line():
+    return render_template('linechart.html', result = measurements)
+
 # TODO: avaa sivun result.html ja näyttää mittaukset siinä
 @app.route('/mittaukset')
 def get_all_measurements_page():
-    return "avaa tässä HTML-sivu, jossa näkyy kaikki mittaukset"
+    return render_template('result.html', result = measurements)
 
 # TODO: ota vastaan HTTP POSTilla lähetty mittaus ja laita se taulukkoon
 @app.route('/uusimittaus', methods=['POST'])
